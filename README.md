@@ -15,3 +15,11 @@ Green: Arrow Keys
 **Objective:** score 10 points before your opponent. You can only score while you are not it. Tag your opponent when you are it in order to score points.
 
 Running into walls or terrain will cause you to lose the game.
+
+---
+Steps to play:
+- download the "src" folder
+- using terminal, use "cd" into the "src" folder
+- run "javac Food.java Game.java Graphics.java Main.java Sound.java"
+- run "java Main"
+- HAVE FUN
