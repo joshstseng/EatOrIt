@@ -1,4 +1,4 @@
-# Eat Or It (Work in progress)
+# Eat Or It
 ---
 
 A game of tag inspired by the original Snake game! Spawn in a randomly generated arena and gain points while not it.
