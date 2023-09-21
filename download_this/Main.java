@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Random;
 
-public class Main {
+public class Main { //test
 
     public class Food {
 
@@ -58,57 +58,6 @@ public class Main {
             this.setVisible(true);
             this.setLocationRelativeTo(null);
         }
-    }
-
-    public class Sound {
-
-        private Clip clip;
-
-        public Sound(String fileName) {
-            // specify the sound to play
-            // (assuming the sound can be played by the audio system)
-            // from a wave File
-            try {
-                URL soundURL = getClass().getResource(fileName);
-                // File file = new File(fileName);
-                //if (file.exists()) {
-                AudioInputStream sound = AudioSystem.getAudioInputStream(soundURL);
-                // load the sound into memory (a Clip)
-                clip = AudioSystem.getClip();
-                clip.open(sound);
-                //}
-                //else {
-                //throw new RuntimeException("Sound: file not found: " + fileName);
-                //}
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-                throw new RuntimeException("Sound: Malformed URL: " + e);
-            } catch (UnsupportedAudioFileException e) {
-                e.printStackTrace();
-                throw new RuntimeException("Sound: Unsupported Audio File: " + e);
-            } catch (IOException e) {
-                e.printStackTrace();
-                throw new RuntimeException("Sound: Input/Output Error: " + e);
-            } catch (LineUnavailableException e) {
-                e.printStackTrace();
-                throw new RuntimeException("Sound: Line Unavailable Exception Error: " + e);
-            }
-
-            // play, stop, loop the sound clip
-        }
-
-        public void play() {
-            clip.setFramePosition(0);  // Must always rewind!
-            clip.start();
-        }
-
-        public void loop() {
-            clip.loop(Clip.LOOP_CONTINUOUSLY);
-        }
-
-        public void stop() {
-            clip.stop();
-        }
 
     }
 
@@ -124,7 +73,7 @@ public class Main {
         static final int HEIGHT = 600;
         static int TICK_SIZE = 25; // changing this changes square size
         static final int BOARD_SIZE = (WIDTH * HEIGHT) / TICK_SIZE;
-        static final int HUD_HEIGHT = HEIGHT + TICK_SIZE * 9;
+        static final int HUD_HEIGHT = HEIGHT + TICK_SIZE*9;
         static int gameNumber = 0;
         String[] options = {"Large", "Normal", "Small"};
 
@@ -167,7 +116,7 @@ public class Main {
         final Timer timer = new Timer(setDelay, this); // original delay = 150
         boolean isMoving = false;
         int isIt;
-        int ran = (int) (Math.random() * 10);
+        int ran = (int) (Math.random()*10);
 
         int score1 = 0;
         int score2 = 0;
@@ -192,7 +141,7 @@ public class Main {
                 @Override
                 public void keyPressed(KeyEvent e) {
                     if (isMoving) {
-                        switch (e.getKeyCode()) {
+                        switch(e.getKeyCode()) {
                             case KeyEvent.VK_LEFT:
                                 if (direction != 'R') {
                                     direction = 'L';
@@ -278,7 +227,7 @@ public class Main {
             obstacleMap = new int[WIDTH][HEIGHT];
             // obstacle gen - no more than 2% of the map is theoretically covered randomly
             // the first TICK_SIZE * __ is not covered for spawn protection
-            for (int i = TICK_SIZE * 7; i < WIDTH - (TICK_SIZE * 7); i += TICK_SIZE) {
+            for (int i = TICK_SIZE*7; i < WIDTH - (TICK_SIZE*7); i += TICK_SIZE) {
                 for (int j = TICK_SIZE; j < HEIGHT; j += TICK_SIZE) {
                     double randNum = Math.random();
                     if (randNum < 0.02) {
@@ -294,8 +243,8 @@ public class Main {
 
             snakePosX2 = new int[BOARD_SIZE];
             snakePosY2 = new int[BOARD_SIZE];
-            snakePosX2[0] = WIDTH - TICK_SIZE;
-            snakePosY2[0] = HEIGHT - TICK_SIZE;
+            snakePosX2[0] = WIDTH-TICK_SIZE;
+            snakePosY2[0] = HEIGHT-TICK_SIZE;
 
             snakeLength2 = 5;
             direction2 = 'L';
@@ -333,38 +282,39 @@ public class Main {
 
             if (selection == 1) {
                 g.setColor(Color.WHITE);
-                g.drawString("Score:", TICK_SIZE, HUD_HEIGHT - 7 * TICK_SIZE);
+                g.drawString("Score:", TICK_SIZE, HUD_HEIGHT - 7*TICK_SIZE);
                 g.setColor(Color.GREEN);
-                g.drawString(scoreStr1, TICK_SIZE, HUD_HEIGHT - 5 * TICK_SIZE);
+                g.drawString(scoreStr1, TICK_SIZE, HUD_HEIGHT - 5*TICK_SIZE);
                 g.setColor(Color.RED);
-                g.drawString(scoreStr2, TICK_SIZE, HUD_HEIGHT - 3 * TICK_SIZE);
+                g.drawString(scoreStr2, TICK_SIZE, HUD_HEIGHT - 3*TICK_SIZE);
                 g.setColor(Color.WHITE);
                 g.drawString(String.format("Round %d", gameNumber), TICK_SIZE, HUD_HEIGHT - TICK_SIZE);
             } else if (selection == 0) { // large
                 g.setColor(Color.WHITE);
-                g.drawString("Score:", TICK_SIZE, HEIGHT + 2 * TICK_SIZE);
+                g.drawString("Score:", TICK_SIZE, HEIGHT + 2*TICK_SIZE);
                 g.setColor(Color.GREEN);
-                g.drawString(scoreStr1, TICK_SIZE, HEIGHT + 5 * TICK_SIZE);
+                g.drawString(scoreStr1, TICK_SIZE, HEIGHT + 5*TICK_SIZE);
                 g.setColor(Color.RED);
-                g.drawString(scoreStr2, TICK_SIZE, HEIGHT + 8 * TICK_SIZE);
+                g.drawString(scoreStr2, TICK_SIZE, HEIGHT + 8*TICK_SIZE);
                 g.setColor(Color.WHITE);
-                g.drawString(String.format("Round %d", gameNumber), TICK_SIZE, HEIGHT + 11 * TICK_SIZE);
+                g.drawString(String.format("Round %d", gameNumber), TICK_SIZE, HEIGHT + 11*TICK_SIZE);
             } else if (selection == 2) { // small
                 g.setColor(Color.WHITE);
                 g.drawString("Score:", TICK_SIZE, HEIGHT + TICK_SIZE);
                 g.setColor(Color.GREEN);
-                g.drawString(scoreStr1, TICK_SIZE, HEIGHT + 2 * TICK_SIZE);
+                g.drawString(scoreStr1, TICK_SIZE, HEIGHT + 2*TICK_SIZE);
                 g.setColor(Color.RED);
-                g.drawString(scoreStr2, TICK_SIZE, HEIGHT + 3 * TICK_SIZE);
+                g.drawString(scoreStr2, TICK_SIZE, HEIGHT + 3*TICK_SIZE);
                 g.setColor(Color.WHITE);
-                g.drawString(String.format("Round %d", gameNumber), TICK_SIZE, HUD_HEIGHT - TICK_SIZE / 2);
+                g.drawString(String.format("Round %d", gameNumber), TICK_SIZE, HUD_HEIGHT - TICK_SIZE/2);
             }
+
 
 
             // obstacles generation
             g.setColor(Color.PINK);
-            for (int i = 0; i < WIDTH; i++) {
-                for (int j = 0; j < HEIGHT; j++) {
+            for (int i = 0; i < WIDTH; i++){
+                for (int j = 0; j < HEIGHT; j++){
                     if (obstacleMap[i][j] == 1) {
                         g.fillRect(i, j, TICK_SIZE, TICK_SIZE);
                     }
@@ -425,7 +375,7 @@ public class Main {
                 String winText;
                 String pressText = "Press any key to play again";
                 g.setFont(font);
-                ran = (int) (Math.random() * 10);
+                ran = (int) (Math.random()*10);
 
                 if (winner == 1) {
                     bigScore1++;
@@ -459,11 +409,11 @@ public class Main {
 
         protected void move() {
             for (int i = snakeLength; i > 0; i--) {
-                snakePosX[i] = snakePosX[i - 1];
-                snakePosY[i] = snakePosY[i - 1];
+                snakePosX[i] = snakePosX[i-1];
+                snakePosY[i] = snakePosY[i-1];
 
-                snakePosX2[i] = snakePosX2[i - 1];
-                snakePosY2[i] = snakePosY2[i - 1];
+                snakePosX2[i] = snakePosX2[i-1];
+                snakePosY2[i] = snakePosY2[i-1];
             }
             if (isIt == 1) {
                 //score2++;
@@ -601,7 +551,59 @@ public class Main {
         }
     }
 
-    public void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public class Sound {
+
+        private Clip clip;
+        public Sound(String fileName) {
+            // specify the sound to play
+            // (assuming the sound can be played by the audio system)
+            // from a wave File
+            try {
+                URL soundURL = getClass().getResource(fileName);
+                // File file = new File(fileName);
+                //if (file.exists()) {
+                AudioInputStream sound = AudioSystem.getAudioInputStream(soundURL);
+                // load the sound into memory (a Clip)
+                clip = AudioSystem.getClip();
+                clip.open(sound);
+                //}
+                //else {
+                //throw new RuntimeException("Sound: file not found: " + fileName);
+                //}
+            }
+            catch (MalformedURLException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Sound: Malformed URL: " + e);
+            }
+            catch (UnsupportedAudioFileException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Sound: Unsupported Audio File: " + e);
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Sound: Input/Output Error: " + e);
+            }
+            catch (LineUnavailableException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Sound: Line Unavailable Exception Error: " + e);
+            }
+
+            // play, stop, loop the sound clip
+        }
+        public void play(){
+            clip.setFramePosition(0);  // Must always rewind!
+            clip.start();
+        }
+        public void loop(){
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+        }
+        public void stop(){
+            clip.stop();
+        }
+
+    }
+
+    public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         new Game();
     }
 }
