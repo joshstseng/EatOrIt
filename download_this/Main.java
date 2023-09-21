@@ -599,9 +599,9 @@ public class Main {
 
             repaint();
         }
+    }
 
-        public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-            new Game();
-        }
+    public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        new Game();
     }
 }
