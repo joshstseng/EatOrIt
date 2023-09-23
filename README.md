@@ -19,8 +19,13 @@ Running into walls or terrain will cause you to lose the game.
 
 ---
 Steps to play:
-- download the "src" folder can use [this tool](https://download-directory.github.io/) and paste this link: https://github.com/joshstseng/EatOrIt/tree/main/src
-- using terminal, use "cd" into the "src" folder
-- run "javac Food.java Game.java Graphics.java Main.java Sound.java"
-- run "java Main"
+- Simply download the .jar file, run it, HAVE FUN!
+- Will only work with Java version 19+
+
+OR
+
+- Download the "src" folder can use [this tool](https://download-directory.github.io/) and paste this link: https://github.com/joshstseng/EatOrIt/tree/main/src
+- Using terminal, use "cd" into the "src" folder
+- Run "javac Food.java Game.java Graphics.java Main.java Sound.java"
+- Run "java Main"
 - HAVE FUN
