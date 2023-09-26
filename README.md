@@ -21,6 +21,7 @@ Running into walls or terrain will cause you to lose the game.
 Steps to play:
 - Simply download the .jar file, run it, HAVE FUN!
 - Will only work with Java version 19+
+- (currently not in, needs to be updated)
 
 OR
 
