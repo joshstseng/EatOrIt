@@ -1,10 +1,8 @@
 <component name="ArtifactManager">
-  <artifact build-on-make="true" name="EatOrIt2:jar">
+  <artifact type="jar" name="EatOrIt2:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/EatOrIt2_jar</output-path>
-    <root id="root">
-      <element id="archive" name="EatOrIt2.jar">
-        <element id="module-output" name="EatOrIt2" />
-      </element>
+    <root id="archive" name="EatOrIt2.jar">
+      <element id="module-output" name="EatOrIt2" />
     </root>
   </artifact>
 </component>
