@@ -29,6 +29,6 @@ OR
 3. If using an IDE, navigate to and run ```Main```
 4. If using terminal, navigate into the ```src``` folder
 
-   ii. Run ```javac Food.java Game.java Graphics.java Main.java Sound.java```
-   iii. Run ```java Main```
+   i. Run ```javac Food.java Game.java Graphics.java Main.java Sound.java```
+   ii. Run ```java Main```
 6. HAVE FUN
