@@ -24,9 +24,11 @@ Steps to play:
 
 OR
 1. Simply down this repository.
+
    i. If that doesn't work, download the ```src``` folder. You can use [this tool](https://download-directory.github.io/) and paste this link: https://github.com/joshstseng/EatOrIt/tree/main/src
-2. If using an IDE, navigate to and run ```Main```
-3. If using terminal, navigate into the ```src``` folder
+3. If using an IDE, navigate to and run ```Main```
+4. If using terminal, navigate into the ```src``` folder
+
    ii. Run ```javac Food.java Game.java Graphics.java Main.java Sound.java```
    iii. Run ```java Main```
-4. HAVE FUN
+6. HAVE FUN
