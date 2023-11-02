@@ -30,5 +30,6 @@ OR
 4. If using terminal, navigate into the ```src``` folder
 
    i. Run ```javac Food.java Game.java Graphics.java Main.java Sound.java```
+
    ii. Run ```java Main```
 6. HAVE FUN
